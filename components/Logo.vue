@@ -1,12 +1,10 @@
 <template>
-  <div>Main</div>
+  <div>LOGO</div>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: "Logo",
   components: {},
 };
 </script>
-
-<style scoped></style>
