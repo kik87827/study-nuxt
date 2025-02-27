@@ -4,7 +4,13 @@
     <Logo />
     <br />
     <div>
-      {{ products }}
+      <ul>
+        <li v-for="product in products" :key="product.id">
+          <img :src="product.imageUrl" :alt="product.name" />
+          <p>{{ product.name }}</p>
+          <p>{{ product.price }}</p>
+        </li>
+      </ul>
     </div>
     <br />
   </div>
@@ -18,8 +24,23 @@ import Logo from '~/components/Logo.vue'
 // useAsyncData를 사용하여 데이터를 비동기적으로 가져옴
 const { data: products, error } = await useAsyncData('products', async () => {
   const response = await axios.get('http://localhost:3000/products')
-  return response.data // 데이터를 반환
+  const resfilter = response.data.map((item) => ({
+    ...item,
+    imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+  }))
+  return resfilter // 데이터를 반환
 })
+
+/*
+const { data: products, error } = await useAsyncData('products', async () => {
+  const response = await axios.get('http://localhost:3000/products')
+  const productsFilter = response.data.map((item) => ({
+    ...item,
+    imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+  }))
+  return { productsFilter } // 데이터를 반환
+})
+*/
 
 // 페이지 메타데이터 설정
 useHead({

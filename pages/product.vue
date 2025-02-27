@@ -18,8 +18,8 @@ useHead({
 });
 
 export default {
-  name: "Product",
-  components: {},
+    name: "Product",
+    components: {},
 };
 </script>
 
