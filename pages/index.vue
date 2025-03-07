@@ -23,7 +23,6 @@
 </template>
 
 <script setup>
-import { useAsyncData } from '#app'
 import axios from 'axios'
 
 // useAsyncData를 사용하여 데이터를 비동기적으로 가져옴

@@ -4,7 +4,6 @@
       <h1>{{ $route.name }} 페이지</h1>
       <nav>
         <NuxtLink to="/">홈페이지</NuxtLink>
-        <NuxtLink to="/main">메인</NuxtLink>
         <NuxtLink to="/product">상품</NuxtLink>
       </nav>
     </header>
@@ -19,9 +18,9 @@
 
 <script>
 export default {
-  name: "Default",
+  name: 'Default',
   components: {},
-};
+}
 </script>
 
 <style scoped></style>
