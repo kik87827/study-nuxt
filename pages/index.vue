@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <main>
-      <div><input type="text" /></div>
+      <div><SearchInput /></div>
       <ul class="">
         <li
           v-for="product in products"
